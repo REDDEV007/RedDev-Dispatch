@@ -1,0 +1,81 @@
+?? RedDev Dispatch - Ambulance Notifications ??
+
+Version: 1.1.0
+Framework: QBCore
+Game: FiveM (GTA V)
+Overview
+
+RedDev Dispatch is a lightweight and efficient resource designed to notify emergency responders when players are injured or down. It enhances roleplay scenarios by sending custom alerts and creating dynamic map blips to guide emergency personnel.
+Features
+
+    Dynamic Notifications: Alerts for "Injured" or "Dead" players based on health thresholds.
+
+    Customizable Settings: Adjust messages, health limits, cooldowns, and blip properties in config.lua.
+
+    Job-Specific Alerts: Send notifications to ambulance, police, firefighters, or any job you choose.
+
+    Interactive Map Blips: Automatically show incident locations on the map with configurable icons.
+
+    Performance Optimized: Limits active blips and removes expired ones for seamless gameplay.
+
+Installation
+
+    Download the Resource: Place the folder in your server's resources directory.
+
+    Edit Configuration: Customize settings in config.lua to fit your server’s needs.
+
+    Enable the Resource: Add the following line to your server.cfg:
+
+    ensure RedDev-Dispatch
+
+    Restart Your Server: Reload your server to activate the resource.
+
+Configuration
+
+Open config.lua to modify the following settings:
+Notification Types
+
+Define messages, health thresholds, and other settings for each type:
+
+Config.NotificationTypes = {
+    Injured = {
+        Message = "An injured person needs help!",
+        BlipSprite = 126,
+        BlipColor = 1,
+        Cooldown = 1000, -- in milliseconds
+        BlipDuration = 180000, -- in milliseconds
+        HealthThreshold = 50,
+    },
+    Dead = {
+        Message = "A person has died, save them!",
+        BlipSprite = 84,
+        BlipColor = 2,
+        Cooldown = 1000,
+        BlipDuration = 180000,
+        HealthThreshold = 0,
+    },
+}
+
+General Settings
+
+    Config.NotificationRadius: Range for notifications (0 = global).
+
+    Config.NotifiedJobs: Jobs that receive alerts (e.g., "ambulance", "police").
+
+    Config.EnableBlips: Enable/disable map blips.
+
+    Config.EnableNotifications: Enable/disable text notifications.
+
+    Config.MaxActiveBlips: Limit the number of active blips.
+
+Usage
+
+    Automatic Notifications:
+    When a player’s health drops below the "Injured" or "Dead" thresholds, alerts are sent to the configured jobs.
+
+    Custom Integration:
+    Use the RedDev-Dispatch:Notify event in other scripts to trigger alerts programmatically.
+
+Support
+
+For issues or suggestions, open a GitHub issue or reach out via the FiveM forums. Contributions are welcome via pull requests!
