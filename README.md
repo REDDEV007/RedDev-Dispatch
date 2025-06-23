@@ -43,7 +43,6 @@ This project is licensed under the MIT License.
 
 ### Screenshots / Demo
 
-*(Consider adding screenshots or a short video link here to showcase your resource)*
 
 ---
 
